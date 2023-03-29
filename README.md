@@ -40,7 +40,8 @@ This project includes four script files:
     artist_id, 
     year, 
     duration
-#### artists - artists in music database - artist_id, 
+#### artists - artists in music database - 
+    artist_id, 
     name, 
     location, 
     lattitude, 
@@ -55,7 +56,7 @@ This project includes four script files:
     weekday
 
 
-###Fact Table
+### Fact Table
 
 #### songplays - 
 ##### records in event data associated with song plays i.e. records with page NextSong - 
