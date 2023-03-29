@@ -6,11 +6,20 @@ Build an ETL pipeline that extracts data from s3, stages in redshift and transfo
 This project includes four script files:
 
     create_table.py is where fact and dimension tables for the star schema in Redshift are created.
-    etl.py is where data gets loaded from S3 into staging tables on Redshift and then processed into the analytics tables on Redshift.
     sql_queries.py where SQL statements are defined, which are then used by etl.py, create_table.py and analytics.py.
+    etl.py is where data gets loaded from S3 into staging tables on Redshift and then processed into the analytics tables on Redshift.
     dwh.cfg has config details of AWS credentials
     README.md is current file.
     
+    
+## Redshift
+- Launch a Redshift cluster and create an IAM role that has read access to S3.
+- Add redshift database and IAM role info to dwh.cfg.
+- Implement the logic in etl.py to load data from S3 to staging tables on Redshift.
+- Implement the logic in etl.py to load data from staging tables to analytics tables on Redshift.
+- Test by running etl.py after running create_tables.py and running the analytic queries on your Redshift database to compare your results with the expected results.
+
+
 ## Database schema design
 Staging Tables
 
@@ -31,9 +40,4 @@ Fact Table
 
 
 
-## Redshift
-- Launch a Redshift cluster and create an IAM role that has read access to S3.
-- Add redshift database and IAM role info to dwh.cfg.
-- Implement the logic in etl.py to load data from S3 to staging tables on Redshift.
-- Implement the logic in etl.py to load data from staging tables to analytics tables on Redshift.
-- Test by running etl.py after running create_tables.py and running the analytic queries on your Redshift database to compare your results with the expected results.
+
